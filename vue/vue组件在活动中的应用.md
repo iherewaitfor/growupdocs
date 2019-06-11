@@ -11,11 +11,11 @@
 
 
 ## 2. 圆形进度条
-```
-[Image](./img/kid.png)
+
+![Image](./img/kid.png)
 ![Image](/vue/img/kid.png)
 ![Image](./img/kid.png)
-```
+
 
 ```html
 <svg viewBox="0 0 200 200" :width="40" :height="40">
