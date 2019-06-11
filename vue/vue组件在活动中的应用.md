@@ -12,9 +12,9 @@
 
 ## 2. 圆形进度条
 ```
-![Image text](./img/kid.png)
-![Image](../vue/img/kid.png)
-![Image text](../img/kid.png)
+[Image](./img/kid.png)
+![Image](/vue/img/kid.png)
+![Image](./img/kid.png)
 ```
 
 ```html
