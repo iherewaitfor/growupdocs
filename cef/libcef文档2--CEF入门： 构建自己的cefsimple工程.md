@@ -3,7 +3,7 @@
 ## 1. 移动cefsimple工程到要目录并删除test
 1. 将cef_binary_3.3626.1895.g7001d56_windows32.tar.bz2解压到J:\ceftest\cef_3626_3
 2. 将cefsimple从test文件夹中复制到cef_3626_3文件中。此时根目录变成如下
-```
+```C++
 cefsimple
 cef_paths.gypi
 cef_paths2.gypi
@@ -19,7 +19,7 @@ Resources
 ```
 ## 2. 修改要目录CMakeLists.txt
 修改将J:\ceftest\cef_3626_3\CMakeLists.txt。只保留cefsimple工程，并修改相关路径。具体操作如下，将J:\ceftest\cef_3626_3\CMakeLists.txt文件中的。
-```
+```C++
 if(EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/tests")
   add_subdirectory(tests/cefclient)
   add_subdirectory(tests/cefsimple)
@@ -28,34 +28,34 @@ if(EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/tests")
 endif()
 ```
 修改为
-```
+```C++
 if(EXISTS "${CMAKE_CURRENT_SOURCE_DIR}")
   add_subdirectory(cefsimple)
 endif()
 ```
 或直接修改为
-```
+```C++
 add_subdirectory(cefsimple)
 ```
 ## 3. 修改编译选项
 修改文件J:\ceftest\cef_3626\cmake\cef_variables.cmake,
 ### 将链接运行库的MT修改为MD
 将
-```
+```C++
   set(CEF_RUNTIME_LIBRARY_FLAG "/MT" CACHE STRING "Optional flag specifying which runtime to use")
 ```
 修改为
-```
+```C++
   set(CEF_RUNTIME_LIBRARY_FLAG "/MD" CACHE STRING "Optional flag specifying which runtime to use")
 ```
 ### 修改配置，把sanbox改为off
 Sanbox只支持MT，使用MD后，要关掉SANBOX。可参考文档[https://bitbucket.org/chromiumembedded/cef/wiki/LinkingDifferentRunTimeLibraries.md](https://bitbucket.org/chromiumembedded/cef/wiki/LinkingDifferentRunTimeLibraries.md)。具体操作如下。
 将
-```
+```C++
 option(USE_SANDBOX "Enable or disable use of the sandbox." ON)
 ```
 修改为
-```
+```C++
 option(USE_SANDBOX "Enable or disable use of the sandbox." OFF)
 ```
 ## 4. 使用cmake配置和生成工程
