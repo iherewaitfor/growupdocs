@@ -12,7 +12,7 @@
 
 ## 2. 圆形进度条
 ```
-./img/kid.png
+![Image](./img/kid.png)
 ```
 
 ```html
