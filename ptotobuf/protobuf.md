@@ -4,7 +4,7 @@
 Protobuf是一种平台无关、语言无关、可扩展且轻便高效的序列化数据结构的协议，可以用于网络通信和数据存储。
 
 ## 二、Protobuf优势劣势
-![avatar](../img/protobuf/good.png)
+![avatar](./img/good.png)
 
 ## 三、Protobuf使用
 !> protobuf源码地址： https://github.com/protocolbuffers/protobuf.git  
@@ -17,7 +17,7 @@ Protobuf是一种平台无关、语言无关、可扩展且轻便高效的序列
     5. 使用pb文件里面的对象进行读写操作。
 
 ### 1. 使用cmake生成工程项目
-![avatar](../img/protobuf/cmake.png)
+![avatar](./img/cmake.png)
 
 编译后，在输出目录有个文件protoc.exe
 
@@ -28,7 +28,7 @@ Protobuf是一种平台无关、语言无关、可扩展且轻便高效的序列
 // test.proto 待编译的协议文件
 protoc -I=$SRC_DIR --cpp_out=$DST_DIR $SRC_DIR/test.proto
 ```
-![avatar](../img/protobuf/protoc.png)
+![avatar](./img/protoc.png)
 使用终端到protoc.exe目录，执行以上命令后，在存放目录会生成 xxxx.pb.cc 和 xxxx.pb.h文件  
 >proto代码编译  
 语法：  
